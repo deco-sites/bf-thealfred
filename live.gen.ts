@@ -4,11 +4,16 @@
 
 import * as $$$$0 from "./routes/styles.css.ts";
 import * as $$$$1 from "./routes/_app.tsx";
-import * as $$$$$$$$0 from "./sections/Hero.tsx";
-import * as $$$$$$$$1 from "./sections/Theme.tsx";
+import * as $$$$$0 from "./islands/Card/index.tsx";
+import * as $$$$$1 from "./islands/Carousel/index.tsx";
+import * as $$$$$2 from "./islands/ShowCaseCarousel/index.tsx";
+import * as $$$$$3 from "./islands/SliderJS/index.tsx";
+import * as $$$$$$$$0 from "./sections/BestDiscounts.tsx";
+import * as $$$$$$$$1 from "./sections/DiscountsByCategory.tsx";
 import * as $$$$$$$$2 from "./sections/Footer.tsx";
-import * as $$$$$$$$3 from "./sections/SimpleTextList.tsx";
-import * as $$$$$$$$4 from "./sections/ParagraphList.tsx";
+import * as $$$$$$$$3 from "./sections/Home.tsx";
+import * as $$$$$$$$4 from "./sections/SaleOff.tsx";
+import * as $$$$$$$$5 from "./sections/Theme.tsx";
 import * as $live_workflows from "$live/routes/live/workflows/run.ts";
 import * as $live_middleware from "$live/routes/_middleware.ts";
 import * as $live_workbench from "$live/routes/live/workbench.ts";
@@ -156,17 +161,24 @@ const manifest = {
     "./routes/live/workflows/run.ts": $live_workflows,
     "./routes/styles.css.ts": $$$$0,
   },
+  "islands": {
+    "./islands/Card/index.tsx": $$$$$0,
+    "./islands/Carousel/index.tsx": $$$$$1,
+    "./islands/ShowCaseCarousel/index.tsx": $$$$$2,
+    "./islands/SliderJS/index.tsx": $$$$$3,
+  },
   "sections": {
     "$live/sections/Conditional_Beta.tsx": i2$$$$$0,
     "$live/sections/EmptySection.tsx": i2$$$$$1,
     "$live/sections/PageInclude.tsx": i2$$$$$2,
     "$live/sections/Slot.tsx": i2$$$$$3,
     "$live/sections/UseSlot.tsx": i2$$$$$4,
+    "deco-sites/bf-thealfred/sections/BestDiscounts.tsx": $$$$$$$$0,
+    "deco-sites/bf-thealfred/sections/DiscountsByCategory.tsx": $$$$$$$$1,
     "deco-sites/bf-thealfred/sections/Footer.tsx": $$$$$$$$2,
-    "deco-sites/bf-thealfred/sections/Hero.tsx": $$$$$$$$0,
-    "deco-sites/bf-thealfred/sections/ParagraphList.tsx": $$$$$$$$4,
-    "deco-sites/bf-thealfred/sections/SimpleTextList.tsx": $$$$$$$$3,
-    "deco-sites/bf-thealfred/sections/Theme.tsx": $$$$$$$$1,
+    "deco-sites/bf-thealfred/sections/Home.tsx": $$$$$$$$3,
+    "deco-sites/bf-thealfred/sections/SaleOff.tsx": $$$$$$$$4,
+    "deco-sites/bf-thealfred/sections/Theme.tsx": $$$$$$$$5,
     "deco-sites/std/sections/Analytics.tsx": i2$$$$$5,
     "deco-sites/std/sections/configButterCMS.global.tsx": i2$$$$$6,
     "deco-sites/std/sections/configNuvemShop.tsx": i2$$$$$7,
@@ -297,7 +309,6 @@ const manifest = {
     "deco-sites/std/accounts/vtex.ts": i2$$4,
     "deco-sites/std/accounts/yourViews.ts": i2$$5,
   },
-  "islands": {},
   "baseUrl": import.meta.url,
 };
 
