@@ -19,13 +19,8 @@ export default function BestDiscounts({ products }: Props) {
       <div class="ml-[8vw]">
         <SectionTitle symbol="$" text="MAIORES" markedText="DESCONTOS" />
       </div>
-      <Carousel>
-        {products.map((e) => (
-          <ProductCard
-            product={e}
-          />
-        ))}
-      </Carousel>
+      <Carousel products={products} />
+
     </section>
   );
 }

@@ -18,9 +18,7 @@ export default function SaleOff({ products }: Props) {
         <SectionTitle symbol="$" text="ESQUENTA" markedText="BLACK FRIDAY" />
       </div>
 
-      <Carousel>
-        {products.map((product) => <ProductCard product={product} />)}
-      </Carousel>
+      <Carousel products={products} />
     </section>
   );
 }
