@@ -1,67 +1,13 @@
-import Image from "deco-sites/std/components/Image.tsx";
-import { mapProductToAnalyticsItem } from "deco-sites/std/commerce/utils/productToAnalyticsItem.ts";
 import type { Product } from "deco-sites/std/commerce/types.ts";
-
-export interface Layout {
-  basics?: {
-    contentAlignment?: "Left" | "Center";
-    oldPriceSize?: "Small" | "Normal";
-    ctaText?: string;
-  };
-  elementsPositions?: {
-    skuSelector?: "Top" | "Bottom";
-    favoriteIcon?: "Top right" | "Top left";
-  };
-  hide?: {
-    productName?: boolean;
-    productDescription?: boolean;
-    allPrices?: boolean;
-    installments?: boolean;
-    skuSelector?: boolean;
-    cta?: boolean;
-  };
-  onMouseOver?: {
-    image?: "Change image" | "Zoom image";
-    card?: "None" | "Move up";
-    showFavoriteIcon?: boolean;
-    showSkuSelector?: boolean;
-    showCardShadow?: boolean;
-    showCta?: boolean;
-  };
-}
 
 interface Props {
   product: Product;
-  /** Preload card image */
-  preload?: boolean;
-
-  /** @description used for analytics event */
-  itemListName?: string;
-  layout?: Layout;
 }
 
-const WIDTH = 200;
-const HEIGHT = 279;
-
-function ProductCard({ product, preload, itemListName, layout }: Props) {
+function ProductCard({ product }: Props) {
   const {
-    productID,
-    name,
     image: images,
   } = product;
-  const id = `product-card-${productID}`;
-  const [front, back] = images ?? [];
-
-  const l = layout;
-
-  const cta = (
-    <a
-      aria-label="view product"
-      class="btn btn-block"
-    >
-      {l?.basics?.ctaText || "Ver produto"}
-    </a>
-  );
 
   return (
     <div className="w-[297px] h-[444px] shrink-0 rounded-md bg-white select-none">

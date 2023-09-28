@@ -4,10 +4,9 @@
 
 import * as $$$$0 from "./routes/styles.css.ts";
 import * as $$$$1 from "./routes/_app.tsx";
-import * as $$$$$0 from "./islands/Card/index.tsx";
-import * as $$$$$1 from "./islands/Carousel/index.tsx";
-import * as $$$$$2 from "./islands/ShowCaseCarousel/index.tsx";
-import * as $$$$$3 from "./islands/SliderJS/index.tsx";
+import * as $$$$$0 from "./islands/Carousel/index.tsx";
+import * as $$$$$1 from "./islands/ShowCaseCarousel/index.tsx";
+import * as $$$$$2 from "./islands/SliderJS/index.tsx";
 import * as $$$$$$$$0 from "./sections/BestDiscounts.tsx";
 import * as $$$$$$$$1 from "./sections/DiscountsByCategory.tsx";
 import * as $$$$$$$$2 from "./sections/Footer.tsx";
@@ -162,10 +161,9 @@ const manifest = {
     "./routes/styles.css.ts": $$$$0,
   },
   "islands": {
-    "./islands/Card/index.tsx": $$$$$0,
-    "./islands/Carousel/index.tsx": $$$$$1,
-    "./islands/ShowCaseCarousel/index.tsx": $$$$$2,
-    "./islands/SliderJS/index.tsx": $$$$$3,
+    "./islands/Carousel/index.tsx": $$$$$0,
+    "./islands/ShowCaseCarousel/index.tsx": $$$$$1,
+    "./islands/SliderJS/index.tsx": $$$$$2,
   },
   "sections": {
     "$live/sections/Conditional_Beta.tsx": i2$$$$$0,

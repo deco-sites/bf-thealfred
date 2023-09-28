@@ -20,7 +20,7 @@ const ShowCaseCarousel = ({
         <span className="text-red-800">{startMarkedText}</span> {midText}{" "}
         <span className="font-bold text-white">{endMarkedText}</span>
       </p>
-      <Carousel class="gap-4" isSingleVisibleItem>
+      <Carousel class="gap-4">
         {products.map((product) => <ProductCard product={product} />)}
       </Carousel>
     </div>

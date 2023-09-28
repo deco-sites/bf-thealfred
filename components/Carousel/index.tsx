@@ -4,15 +4,11 @@ import Icon from "../ui/Icon.tsx";
 import { useId } from "preact/hooks";
 import type { JSX } from "preact";
 
-type Props = JSX.IntrinsicElements["div"] & {
-  hasControl?: boolean;
-  isSingleVisibleItem?: boolean;
-};
-
+type Props = JSX.IntrinsicElements["div"];
 const Controls = () => {
   return (
     <>
-      <div class="hidden sm:flex items-center justify-center z-10 col-start-1 row-start-2">
+      <div class="hidden md:flex items-center justify-center z-10 col-start-1 row-start-2">
         <button
           class="h-12 w-12 -ml-12 flex items-center justify-start"
           data-slide="prev"
@@ -26,7 +22,7 @@ const Controls = () => {
           />
         </button>
       </div>
-      <div class="hidden sm:flex items-center justify-center z-10 col-start-3 row-start-2">
+      <div class="hidden md:flex items-center justify-center z-10 col-start-3 row-start-2">
         <button
           data-slide="next"
           aria-label="Next item"
@@ -45,8 +41,7 @@ const Controls = () => {
 };
 
 const Carousel = (
-  { children, class: _class, hasControl = true, isSingleVisibleItem = false }:
-    Props,
+  { children, class: _class }: Props,
 ) => {
   const id = useId();
 
@@ -61,7 +56,7 @@ const Carousel = (
         {children}
       </Slider>
 
-      {hasControl && <Controls />}
+      <Controls />
 
       <SliderControllerJS rootId={id} />
     </div>
