@@ -48,8 +48,14 @@ export default function Footer({
   icons = ["Instagram", "Facebook", "WhatsApp", "Tiktok"],
 }: Props) {
   return (
-    <section className="py-28 flex bg-[#171111] w-full justify-center items-center gap-8 flex-col px-[8vw]">
-      <p className="text-3xl font-light text-white mb-4">
+    <section
+      style={{
+        backgroundImage:
+          "url('/backgroundTexture.png'), linear-gradient(to top, #5b0d0d, #151111)",
+      }}
+      className="py-28 flex w-full justify-center items-center gap-8 flex-col px-[8vw]"
+    >
+      <p className="text-xl sm:text-3xl font-light text-white mb-4">
         <span class="font-bold">
           {title.markedText}
         </span>{" "}

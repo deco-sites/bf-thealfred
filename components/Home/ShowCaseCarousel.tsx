@@ -1,17 +1,19 @@
-import Card from "../../islands/Card/index.tsx";
+import ProductCard from "../../components/ProductCard/index.tsx";
 import Carousel from "../../islands/Carousel/index.tsx";
-
+import type { Product } from "deco-sites/std/commerce/types.ts";
 export interface Props {
+  products: Product[];
   startMarkedText?: string;
   midText?: string;
   endMarkedText?: string;
 }
 
 const ShowCaseCarousel = ({
+  products,
   startMarkedText = "%",
   midText = "DESTAQUES",
   endMarkedText = "BF23",
-}) => {
+}: Props) => {
   return (
     <div className="w-full sm:w-[297px] text-center">
       <p className="text-gray-300 text-lg mb-4">
@@ -19,7 +21,7 @@ const ShowCaseCarousel = ({
         <span className="font-bold text-white">{endMarkedText}</span>
       </p>
       <Carousel class="gap-4" isSingleVisibleItem>
-        {Array(6).fill("").map(() => <Card />)}
+        {products.map((product) => <ProductCard product={product} />)}
       </Carousel>
     </div>
   );

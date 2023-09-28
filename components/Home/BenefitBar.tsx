@@ -16,7 +16,7 @@ const BenefitItem = (
   return (
     <div className="flex-col md:flex-row flex items-center gap-3">
       <img src="/freightIcon.png" height={20} />
-      <p className="font-bold text-md text-white">
+      <p className="text-center md:text-left font-bold text-md text-white">
         {topMarkedText}
         <br />
         <span className="font-light">

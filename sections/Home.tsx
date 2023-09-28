@@ -9,8 +9,10 @@ import BenefitBar, {
   Props as BenefitBarProps,
 } from "../components/Home/BenefitBar.tsx";
 import Header, { Props as HeaderProps } from "../components/Header/index.tsx";
+import type { Product } from "deco-sites/std/commerce/types.ts";
 
 interface Props {
+  products: Product[] | null;
   header?: HeaderProps;
   blackFridayDesciption?: BlackFridayDescriptionProps;
   showCaseCarousel?: ShowCaseCarouselProps;
@@ -22,20 +24,27 @@ export default function Home({
   blackFridayDesciption,
   showCaseCarousel,
   banefitBar,
+  products,
 }: Props) {
+  if (!products || products.length === 0) {
+    return null;
+  }
+
   return (
     <section
       style={{
         backgroundImage:
-          "url('/backgroundTexture.png'), linear-gradient(to bottom, #5b0d0d, #151111)",
+          "url('/backgroundSphere.png'), url('/backgroundTexture.png'), linear-gradient(to bottom, #5b0d0d, #151111)",
+        backgroundPosition: "center, center",
+        backgroundSize: "40vw, cover, 100vw",
       }}
-      className="min-h-screen md:h-screen w-full  bg-cover bg-no-repeat"
+      className="min-h-screen md:h-screen w-full bg-no-repeat"
     >
       <Header {...header} />
       <div className=" w-full pt-28 h-full flex flex-col items-center justify-center gap-16 sm:px-[16vw]">
         <div className="flex flex-col md:flex-row items-center justify-center w-full md:items-start md:justify-between">
           <BlackFridayDescription {...blackFridayDesciption} />
-          <ShowCaseCarousel {...showCaseCarousel} />
+          <ShowCaseCarousel products={products} {...showCaseCarousel} />
         </div>
         <div class="w-full px-3">
           <BenefitBar {...banefitBar} />

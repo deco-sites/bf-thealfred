@@ -1,17 +1,25 @@
 import Carousel from "deco-sites/start/islands/Carousel/index.tsx";
-import Card from "../components/Card/index.tsx";
+import ProductCard from "../components/ProductCard/index.tsx";
+import SectionTitle from "../components/SectionTitle/index.tsx";
+import type { Product } from "deco-sites/std/commerce/types.ts";
 
-export default function SaleOff() {
+interface Props {
+  products: Product[] | null;
+}
+
+export default function SaleOff({ products }: Props) {
+  if (!products || products.length === 0) {
+    return null;
+  }
+
   return (
     <section className="bg-[#171111] flex w-full flex-col pt-10">
-      <div>
-        <p className="text-gray-100 text-2xl mb-6 ml-[8vw]">
-          <span className="text-red-800">%</span> MAIORES{" "}
-          <span className="font-bold text-white">DESCONTOS</span>
-        </p>
+      <div class="ml-[8vw]">
+        <SectionTitle symbol="$" text="ESQUENTA" markedText="BLACK FRIDAY" />
       </div>
+
       <Carousel>
-        {Array(6).fill("").map(() => <Card />)}
+        {products.map((product) => <ProductCard product={product} />)}
       </Carousel>
     </section>
   );

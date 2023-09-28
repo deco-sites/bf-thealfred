@@ -4,7 +4,6 @@ interface Props {
   rootId: string;
   behavior?: "smooth" | "auto";
   interval?: number;
-  startItem?: number;
 }
 
 const ATTRIBUTES = {
@@ -168,9 +167,7 @@ const setup = ({ rootId, behavior, interval }: Props) => {
   };
 };
 
-function Slider(
-  { rootId, behavior = "smooth", interval, startItem = 0 }: Props,
-) {
+function Slider({ rootId, behavior = "smooth", interval }: Props) {
   useEffect(() => setup({ rootId, behavior, interval }), [
     rootId,
     behavior,
