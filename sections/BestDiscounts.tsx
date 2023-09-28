@@ -15,7 +15,7 @@ export default function BestDiscounts({ products }: Props) {
   return (
     <section className="bg-[#171111] flex w-full flex-col pt-10">
       <div class="ml-[8vw]">
-        <SectionTitle symbol="%" text="MAIORES" markedText="DESCONTOS" />
+        <SectionTitle symbol="$" text="MAIORES" markedText="DESCONTOS" />
       </div>
       <Carousel>
         {products.map((e) => (
