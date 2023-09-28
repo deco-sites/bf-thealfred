@@ -38,11 +38,11 @@ export default function Home({
         backgroundPosition: "center, center",
         backgroundSize: "40vw, cover, 100vw",
       }}
-      className="min-h-screen md:h-screen w-full bg-no-repeat"
+      className="min-h-screen w-full bg-no-repeat"
     >
       <Header {...header} />
-      <div className=" w-full pt-28 h-full flex flex-col items-center justify-center gap-16 sm:px-[16vw]">
-        <div className="flex flex-col md:flex-row items-center justify-center w-full md:items-start md:justify-between">
+      <div className=" w-full pt-28 h-full flex flex-col items-center justify-center gap-16 sm:px-[8vw]">
+        <div className="flex flex-col md:flex-row items-center justify-center w-full md:justify-between md:items-center">
           <div className="px-[10vw] sm:px-0">
             <BlackFridayDescription {...blackFridayDesciption} />
           </div>

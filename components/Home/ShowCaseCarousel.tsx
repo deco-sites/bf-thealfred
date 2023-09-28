@@ -15,7 +15,7 @@ const ShowCaseCarousel = ({
   endMarkedText = "BF23",
 }: Props) => {
   return (
-    <div className="w-full sm:w-[297px] text-center">
+    <div className="w-full  max-[768px]:px-5 max-[768px]:px-5 sm:w-[297px] text-center">
       <p className="text-gray-300 text-lg mb-4">
         <span className="text-red-800">{startMarkedText}</span> {midText}{" "}
         <span className="font-bold text-white">{endMarkedText}</span>

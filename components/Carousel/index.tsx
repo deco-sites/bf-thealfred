@@ -51,7 +51,7 @@ const Carousel = (
       class={`w-full relative grid grid-cols-[20px_1fr_20px] grid-rows-3 ${_class}`}
     >
       <Slider
-        class={`col-span-full row-span-full scrollbar-none gap-4`}
+        class={`col-span-full row-span-full scrollbar-none gap-5`}
       >
         {children}
       </Slider>

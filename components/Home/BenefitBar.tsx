@@ -1,7 +1,10 @@
+import type { Image as DecoImage } from "deco-sites/std/components/types.ts";
+
 type BenefitItemProps = {
   topMarkedText: string;
   bottomText: string;
   bottomMarkedText: string;
+  picture?: DecoImage;
 };
 
 export interface Props {
@@ -11,12 +14,12 @@ export interface Props {
 }
 
 const BenefitItem = (
-  { topMarkedText, bottomText, bottomMarkedText }: BenefitItemProps,
+  { topMarkedText, bottomText, bottomMarkedText, picture }: BenefitItemProps,
 ) => {
   return (
     <div className="flex-col md:flex-row flex items-center gap-3">
-      <img src="/freightIcon.png" height={20} />
-      <p className="text-center md:text-left font-bold text-md text-white">
+      <img src={picture} height={20} />
+      <p className="text-center max-[768px]:text-[10px] md:text-left font-bold text-md text-white">
         {topMarkedText}
         <br />
         <span className="font-light">
@@ -43,6 +46,7 @@ const BenefitBar = ({
     topMarkedText: "OFERTAS COM ATÉ",
     bottomText: "60% DE DESCONTO",
     bottomMarkedText: "NA BF23",
+    // image: "/freightIcon.png",
   },
 }: Props) => {
   return (

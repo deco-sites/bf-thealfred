@@ -36,11 +36,17 @@ const BlackFridayDescription = ({
 }: Props) => {
   return (
     <div className="flex flex-col items-center md:items-start">
-      <img className="mb-5" src="/blackFriday.png" height="10vw" alt="" />
+      <div>
+        <h1 className="text-[120px] mb-8 leading-[100px] uppercase line text-white font-extrabold">
+          Black
+          <span className="font-light block translate-x-24">Friday</span>
+        </h1>
+      </div>
+      {/* <img className="mb-5" src="/blackFriday.png" height="10vw" alt="" /> */}
       <p className="text-white whitespace-nowrap text-xl sm:text-2xl font-extralight tracking-[0.2em] mb-5">
         ATÉ <span className="font-bold">{discount}</span> DE DESCONTO
       </p>
-      <p className="text-lg leading-5 text-center md:text-left text-gray-100 w-full md:w-[40vw] font-extralight">
+      <p className="text-lg leading-5 text-center md:text-left text-xs text-gray-100 w-full md:w-[40vw] font-extralight">
         {description}
       </p>
       <div className="text-center mt-11">
