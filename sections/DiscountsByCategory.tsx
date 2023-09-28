@@ -27,7 +27,7 @@ export default function DiscountsByCategory({
   ],
 }: Props) {
   return (
-    <section className="bg-[#171111] p-[8vw]">
+    <section className="bg-[#171111] px-[6vw] py-[8vw] sm:p-[8vw]">
       <SectionTitle
         invertMarkedText
         symbol="%"
@@ -49,7 +49,7 @@ export default function DiscountsByCategory({
       </div>
 
       {/* mobile design */}
-      <Carousel hasControl={false} class="grid md:hidden">
+      <Carousel class="grid md:hidden">
         {categories.map((category) => {
           return (
             <DiscountCard

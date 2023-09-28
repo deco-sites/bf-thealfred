@@ -9,7 +9,6 @@ interface Props {
   secondParagraph?: string;
   thirdParagraph?: string;
   footerText?: string;
-  icons?: AvailableIcons[];
 }
 
 export default function Footer({
@@ -44,8 +43,6 @@ export default function Footer({
 
   footerText =
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dui justo, finibus nec",
-
-  icons = ["Instagram", "Facebook", "WhatsApp", "Tiktok"],
 }: Props) {
   return (
     <section
@@ -77,9 +74,30 @@ export default function Footer({
         </p>
 
         <div className="flex gap-2 ">
-          {icons.map((icon) => (
-            <Icon class="text-white" id={icon} height="20px" width="20px" />
-          ))}
+          <img
+            class="text-white"
+            src="/instagram.svg"
+            height="20px"
+            width="20px"
+          />
+          <img
+            class="text-white"
+            src="/facebook.svg"
+            height="10px"
+            width="10px"
+          />
+          <img
+            class="text-white"
+            src="/twitter.svg"
+            height="20px"
+            width="20px"
+          />
+          <img
+            class="text-white"
+            src="/youtube.svg"
+            height="20px"
+            width="20px"
+          />
         </div>
       </div>
     </section>

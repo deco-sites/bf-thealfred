@@ -12,8 +12,10 @@ export default function BestDiscounts({ products }: Props) {
     return null;
   }
 
+  console.log(products);
+
   return (
-    <section className="bg-[#171111] flex w-full flex-col pt-10">
+    <section className="bg-[#171111] flex w-full flex-col pt-10 px-[6vw]">
       <div class="ml-[8vw]">
         <SectionTitle symbol="$" text="MAIORES" markedText="DESCONTOS" />
       </div>

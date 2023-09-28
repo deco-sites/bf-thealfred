@@ -43,7 +43,9 @@ export default function Home({
       <Header {...header} />
       <div className=" w-full pt-28 h-full flex flex-col items-center justify-center gap-16 sm:px-[16vw]">
         <div className="flex flex-col md:flex-row items-center justify-center w-full md:items-start md:justify-between">
-          <BlackFridayDescription {...blackFridayDesciption} />
+          <div className="px-[10vw] sm:px-0">
+            <BlackFridayDescription {...blackFridayDesciption} />
+          </div>
           <ShowCaseCarousel products={products} {...showCaseCarousel} />
         </div>
         <div class="w-full px-3">

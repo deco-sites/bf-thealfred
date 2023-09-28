@@ -17,14 +17,16 @@ function Slider({
       class={`grid grid-flow-col overflow-x-auto overscroll-x-contain snap-x snap-mandatory ${_class}`}
       {...props}
     >
-      {Children.map(children, (child, index) => (
-        <li
-          data-slider-item={index}
-          class={snap}
-        >
-          {child}
-        </li>
-      ))}
+      {Children.map(children, (child, index) => {
+        return (
+          <li
+            data-slider-item={index}
+            class={snap}
+          >
+            {child}
+          </li>
+        );
+      })}
     </ul>
   );
 }
