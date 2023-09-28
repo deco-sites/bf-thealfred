@@ -1,5 +1,6 @@
 import Carousel from "../islands/Carousel/index.tsx";
 import { DiscountCard } from "../components/DiscountCard/index.tsx";
+import SectionTitle from "../components/SectionTitle/index.tsx";
 
 type Category = {
   name: string;
@@ -27,11 +28,12 @@ export default function DiscountsByCategory({
 }: Props) {
   return (
     <section className="bg-[#171111] p-[8vw]">
-      <p className="text-gray-100 w-full y-100 font-light text-2xl mb-11">
-        <span className="text-red-800">%</span>{"  "}
-        <span className="font-bold text-white">DESCONTOS</span>{"  "}
-        POR CATEGORIA
-      </p>
+      <SectionTitle
+        invertMarkedText
+        symbol="%"
+        text="POR CATEGORIA"
+        markedText="DESCONTOS"
+      />
 
       {/* desktop design */}
       <div className="hidden md:grid overflow-hidden md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
