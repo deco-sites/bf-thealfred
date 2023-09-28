@@ -3,8 +3,10 @@ import Slider from "../ui/Slider/index.tsx";
 import Icon from "../ui/Icon.tsx";
 import { useId } from "preact/hooks";
 import type { JSX } from "preact";
+import type { Product } from "deco-sites/std/commerce/types.ts";
+import ProductCard from "./../ProductCard/index.tsx";
 
-type Props = JSX.IntrinsicElements["div"];
+type Props = JSX.IntrinsicElements["div"] & {products: Product[]};
 const Controls = () => {
   return (
     <>
@@ -41,7 +43,7 @@ const Controls = () => {
 };
 
 const Carousel = (
-  { children, class: _class }: Props,
+  { children, class: _class, products }: Props,
 ) => {
   const id = useId();
 
@@ -53,7 +55,11 @@ const Carousel = (
       <Slider
         class={`col-span-full row-span-full scrollbar-none gap-4`}
       >
-        {children}
+        {products?.map((e) => (
+          <ProductCard
+            product={e}
+          />
+        ))}
       </Slider>
 
       <Controls />
