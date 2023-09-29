@@ -52,6 +52,7 @@ const setup = ({ rootId, behavior, interval }: Props) => {
   const prev = root?.querySelector(`[${ATTRIBUTES['data-slide="prev"']}]`);
   const next = root?.querySelector(`[${ATTRIBUTES['data-slide="next"']}]`);
   const dots = root?.querySelectorAll(`[${ATTRIBUTES["data-dot"]}]`);
+  let itemToScroll = 0;
 
   if (!root || !slider || !items || items.length === 0) {
     console.warn(
@@ -61,27 +62,6 @@ const setup = ({ rootId, behavior, interval }: Props) => {
 
     return;
   }
-
-  const getElementsInsideContainer = () => {
-    const indices: number[] = [];
-    const sliderRect = slider.getBoundingClientRect();
-
-    for (let index = 0; index < items.length; index++) {
-      const item = items.item(index);
-      const rect = item.getBoundingClientRect();
-
-      const ratio = intersectionX(
-        rect,
-        sliderRect,
-      ) / rect.width;
-
-      if (ratio > THRESHOLD) {
-        indices.push(index);
-      }
-    }
-
-    return indices;
-  };
 
   const goToItem = (index: number) => {
     const item = items.item(index);
@@ -102,27 +82,31 @@ const setup = ({ rootId, behavior, interval }: Props) => {
   };
 
   const onClickPrev = () => {
-    const indices = getElementsInsideContainer();
-    // Wow! items per page is how many elements are being displayed inside the container!!
-    const itemsPerPage = indices.length;
+    if (itemToScroll === 0) {
+      itemToScroll = items.length;
+      onClickPrev();
+      return;
+    }
+    items[itemToScroll - 1].scrollIntoView({
+      block: "nearest",
+      behavior: "smooth",
+    });
 
-    const isShowingFirst = indices[0] === 0;
-    const pageIndex = Math.floor(indices[indices.length - 1] / itemsPerPage);
-
-    goToItem(
-      isShowingFirst ? items.length - 1 : (pageIndex - 1) * itemsPerPage,
-    );
+    itemToScroll--;
   };
-
   const onClickNext = () => {
-    const indices = getElementsInsideContainer();
-    // Wow! items per page is how many elements are being displayed inside the container!!
-    const itemsPerPage = indices.length;
+    const [item] = items;
 
-    const isShowingLast = indices[indices.length - 1] === items.length - 1;
-    const pageIndex = Math.floor(indices[0] / itemsPerPage);
-
-    goToItem(isShowingLast ? 0 : (pageIndex + 1) * itemsPerPage);
+    if (itemToScroll === items.length - 1) {
+      itemToScroll = -1;
+      onClickNext();
+      return;
+    }
+    items[itemToScroll + 1].scrollIntoView({
+      block: "nearest",
+      behavior: "smooth",
+    });
+    itemToScroll++;
   };
 
   const observer = new IntersectionObserver(
