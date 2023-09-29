@@ -14,10 +14,7 @@ export default function SaleOff({ products }: Props) {
 
   return (
     <section className="bg-[#171111] flex w-full flex-col pt-10 px-[8vw] max-[768px]:pr-0">
-      <div class="ml-[8vw]">
-        <SectionTitle symbol="$" text="ESQUENTA" markedText="BLACK FRIDAY" />
-      </div>
-
+      <SectionTitle symbol="$" text="ESQUENTA" markedText="BLACK FRIDAY" />
       <Carousel products={products} />
     </section>
   );

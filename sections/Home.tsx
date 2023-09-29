@@ -41,7 +41,7 @@ export default function Home({
       className="min-h-screen w-full bg-no-repeat"
     >
       <Header {...header} />
-      <div className=" w-full pt-28 h-full flex flex-col items-center justify-center gap-16 sm:px-[8vw]">
+      <div className=" w-full h-full flex flex-col items-center justify-center gap-16 sm:px-[8vw]">
         <div className="flex flex-col md:flex-row items-center justify-center w-full md:justify-between md:items-center">
           <div className="px-[10vw] sm:px-0">
             <BlackFridayDescription {...blackFridayDesciption} />

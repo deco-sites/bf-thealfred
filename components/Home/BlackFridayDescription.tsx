@@ -48,7 +48,7 @@ const BlackFridayDescription = ({
       <p className="text-white whitespace-nowrap text-xl sm:text-2xl font-extralight tracking-[0.2em] mb-5">
         ATÉ <span className="font-bold">{discount}</span> DE DESCONTO
       </p>
-      <p className="text-lg leading-5 text-center md:text-left text-xs text-gray-100 w-full md:w-[40vw] font-extralight">
+      <p className="text-xs leading-5 text-center md:text-left sm:text-base text-gray-100 w-full md:w-[40vw] font-extralight">
         {description}
       </p>
       <div className="text-center mt-11">

@@ -1,5 +1,4 @@
 import Carousel from "deco-sites/start/islands/Carousel/index.tsx";
-import ProductCard from "../components/ProductCard/index.tsx";
 import SectionTitle from "../components/SectionTitle/index.tsx";
 import type { Product } from "deco-sites/std/commerce/types.ts";
 
@@ -12,13 +11,9 @@ export default function BestDiscounts({ products }: Props) {
     return null;
   }
 
-  console.log(products);
-
   return (
     <section className="bg-[#171111] flex w-full flex-col pt-10 px-[8vw] max-[768px]:pr-0">
-      <div class="ml-[8vw]">
-        <SectionTitle symbol="$" text="MAIORES" markedText="DESCONTOS" />
-      </div>
+      <SectionTitle symbol="$" text="MAIORES" markedText="DESCONTOS" />
       <Carousel products={products} />
     </section>
   );

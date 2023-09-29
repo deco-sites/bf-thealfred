@@ -1,4 +1,5 @@
 import Icon, { AvailableIcons } from "../components/ui/Icon.tsx";
+import type { Image as DecoImage } from "deco-sites/std/components/types.ts";
 
 interface Props {
   title?: {
@@ -9,6 +10,13 @@ interface Props {
   secondParagraph?: string;
   thirdParagraph?: string;
   footerText?: string;
+  picture?: DecoImage;
+  socialMediaLinks?: {
+    instagramURL: string;
+    facebookURL: string;
+    twitterURL: string;
+    youtubeURL: string;
+  };
 }
 
 export default function Footer({
@@ -41,8 +49,17 @@ export default function Footer({
   Suspendisse ut rhoncus dolor. Pellentesque nec sapien a nibh pulvinar
   ultricies.`,
 
+  picture = "/thealfredlogo.png",
+
   footerText =
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dui justo, finibus nec",
+
+  socialMediaLinks = {
+    instagramURL: "#",
+    facebookURL: "#",
+    twitterURL: "#",
+    youtubeURL: "#",
+  },
 }: Props) {
   return (
     <section
@@ -68,36 +85,44 @@ export default function Footer({
         {thirdParagraph}
       </p>
       <div className="flex flex-col gap-10 items-center md:flex-row md:gap-0 w-full justify-between mt-12">
-        <img src="/thealfredlogo.png" width="50px" />
+        <img src={picture} width="50px" />
         <p className="text-center text-sm font-ligh0t text-white">
           {footerText}
         </p>
 
-        <div className="flex gap-2 ">
-          <img
-            class="text-white"
-            src="/instagram.svg"
-            height="20px"
-            width="20px"
-          />
-          <img
-            class="text-white"
-            src="/facebook.svg"
-            height="10px"
-            width="10px"
-          />
-          <img
-            class="text-white"
-            src="/twitter.svg"
-            height="20px"
-            width="20px"
-          />
-          <img
-            class="text-white"
-            src="/youtube.svg"
-            height="20px"
-            width="20px"
-          />
+        <div className="flex gap-2 items-center">
+          <a href={socialMediaLinks.instagramURL}>
+            <img
+              class="text-white"
+              src="/instagram.svg"
+              height="20px"
+              width="20px"
+            />
+          </a>
+          <a href={socialMediaLinks.facebookURL}>
+            <img
+              class="text-white"
+              src="/facebook.svg"
+              height="10px"
+              width="10px"
+            />
+          </a>
+          <a href={socialMediaLinks.twitterURL}>
+            <img
+              class="text-white"
+              src="/twitter.svg"
+              height="20px"
+              width="20px"
+            />
+          </a>
+          <a href={socialMediaLinks.youtubeURL}>
+            <img
+              class="text-white"
+              src="/youtube.svg"
+              height="20px"
+              width="20px"
+            />
+          </a>
         </div>
       </div>
     </section>
