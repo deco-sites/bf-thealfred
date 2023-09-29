@@ -15,12 +15,11 @@ export default function BestDiscounts({ products }: Props) {
   console.log(products);
 
   return (
-    <section className="bg-[#171111] flex w-full flex-col pt-10 px-[8vw]">
+    <section className="bg-[#171111] flex w-full flex-col pt-10 px-[8vw] max-[768px]:pr-0">
       <div class="ml-[8vw]">
         <SectionTitle symbol="$" text="MAIORES" markedText="DESCONTOS" />
       </div>
       <Carousel products={products} />
-
     </section>
   );
 }

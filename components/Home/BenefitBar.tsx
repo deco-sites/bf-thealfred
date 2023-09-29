@@ -18,7 +18,7 @@ const BenefitItem = (
 ) => {
   return (
     <div className="flex-col md:flex-row flex items-center gap-3">
-      <img src={picture} height={20} />
+      <img src={picture} loading="lazy" height={20} />
       <p className="text-center max-[768px]:text-[10px] md:text-left font-bold text-md text-white">
         {topMarkedText}
         <br />

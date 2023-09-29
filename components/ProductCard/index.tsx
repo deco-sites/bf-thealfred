@@ -13,8 +13,6 @@ function ProductCard({ product }: Props) {
     image: images,
   } = product;
 
-  console.log("Product", product);
-
   const getTotalDiscount = () => {
     const listPrice = product.offers?.highPrice ?? 0; // Defina um valor padrão
     const bestPrice = product.offers?.lowPrice ?? 0; // Defina um valor padrão
@@ -33,43 +31,45 @@ function ProductCard({ product }: Props) {
 
   return (
     <div className="w-[297px] shrink-0 rounded-md bg-white select-none">
-      <div className="relative mb-1">
-        <img
-          src={images?.[0]?.url || ""}
-          alt=""
-          width="100%"
-          className="rounded-t-md h-full object-cover" // Use 'className' em vez de 'class'
-        />
-      </div>
-      <div className="flex flex-col text-sm items-start p-4 ">
-        <p className="font-bold min-h-[60px] text-left">
-          {product.isVariantOf?.name}
-        </p>
-        <div className="flex gap-1">
-          {getTotalDiscount() > 0 && (
-            <div className="rounded-2xl bg-green-600 text-white px-2">
-              {getTotalDiscount()}%
-            </div>
+      <a href={product.isVariantOf?.url}>
+        <div className="relative mb-1">
+          <img
+            src={images?.[0]?.url || ""}
+            alt=""
+            width="100%"
+            className="rounded-t-md h-full object-cover" // Use 'className' em vez de 'class'
+          />
+        </div>
+        <div className="flex flex-col text-sm items-start p-4 ">
+          <p className="font-bold min-h-[60px] text-left">
+            {product.isVariantOf?.name}
+          </p>
+          <div className="flex gap-1">
+            {getTotalDiscount() > 0 && (
+              <div className="rounded-2xl bg-green-600 text-white px-2">
+                {getTotalDiscount()}%
+              </div>
+            )}
+          </div>
+          {product.offers?.highPrice !== undefined &&
+            product.offers?.lowPrice !== undefined &&
+            product.offers?.highPrice > product.offers?.lowPrice && (
+            <del>{formatPrice(product.offers?.highPrice)}</del>
           )}
-        </div>
-        {product.offers?.highPrice !== undefined && (
-          <del>{formatPrice(product.offers?.highPrice)}</del>
-        )}
-        <span className="font-bold text-lg ">
-          {
-            typeof product.offers?.lowPrice === "number" &&
-              product.offers.lowPrice > 0
-              ? <del>{formatPrice(product.offers.lowPrice)}</del>
-              : null
-          }
-        </span>
-        <div className="my-1 flex flex-col">
-          <span className="text-purple-600 font-semibold text-left">
-            Black Friday
+          <span className="font-bold text-lg ">
+            {typeof product.offers?.lowPrice === "number" &&
+                product.offers.lowPrice > 0
+              ? formatPrice(product.offers.lowPrice)
+              : null}
           </span>
-          <span className="text-red-600 font-semibold text-left">Outlet</span>
+          <div className="my-1 flex flex-col">
+            <span className="text-purple-600 font-semibold text-left">
+              Black Friday
+            </span>
+            <span className="text-red-600 font-semibold text-left">Outlet</span>
+          </div>
         </div>
-      </div>
+      </a>
     </div>
   );
 }

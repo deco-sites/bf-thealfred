@@ -6,7 +6,7 @@ import type { JSX } from "preact";
 import type { Product } from "deco-sites/std/commerce/types.ts";
 import ProductCard from "./../ProductCard/index.tsx";
 
-type Props = JSX.IntrinsicElements["div"] & {products: Product[]};
+type Props = JSX.IntrinsicElements["div"] & { products?: Product[] };
 const Controls = () => {
   return (
     <>
@@ -55,11 +55,13 @@ const Carousel = (
       <Slider
         class={`col-span-full row-span-full scrollbar-none gap-5`}
       >
-        {products?.map((e) => (
-          <ProductCard
-            product={e}
-          />
-        ))}
+        {children !== null && children !== undefined
+          ? children
+          : products?.map((e) => (
+            <ProductCard
+              product={e}
+            />
+          ))}
       </Slider>
 
       <Controls />

@@ -37,9 +37,11 @@ const BlackFridayDescription = ({
   return (
     <div className="flex flex-col items-center md:items-start">
       <div>
-        <h1 className="text-[120px] mb-8 leading-[100px] uppercase line text-white font-extrabold">
+        <h1 className="text-[70px] leading-[80px] mb-8 md:leading-[100px] uppercase line text-white font-extrabold md:text-[120px]">
           Black
-          <span className="font-light block translate-x-24">Friday</span>
+          <span className="font-light block translate-x-6 md:translate-x-24">
+            Friday
+          </span>
         </h1>
       </div>
       {/* <img className="mb-5" src="/blackFriday.png" height="10vw" alt="" /> */}
