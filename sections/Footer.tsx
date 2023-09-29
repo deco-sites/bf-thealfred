@@ -1,4 +1,4 @@
-import Icon, { AvailableIcons } from "../components/ui/Icon.tsx";
+import Icon from "../components/ui/Icon.tsx";
 import type { Image as DecoImage } from "deco-sites/std/components/types.ts";
 
 interface Props {
@@ -49,7 +49,7 @@ export default function Footer({
   Suspendisse ut rhoncus dolor. Pellentesque nec sapien a nibh pulvinar
   ultricies.`,
 
-  picture = "/thealfredlogo.png",
+  picture = "/theAlfred.svg",
 
   footerText =
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dui justo, finibus nec",
@@ -92,33 +92,33 @@ export default function Footer({
 
         <div className="flex gap-2 items-center">
           <a href={socialMediaLinks.instagramURL}>
-            <img
+            <Icon
               class="text-white"
-              src="/instagram.svg"
+              id="Instagram"
               height="20px"
               width="20px"
             />
           </a>
           <a href={socialMediaLinks.facebookURL}>
-            <img
+            <Icon
               class="text-white"
-              src="/facebook.svg"
-              height="10px"
-              width="10px"
+              id="Facebook"
+              height="20px"
+              width="20px"
             />
           </a>
           <a href={socialMediaLinks.twitterURL}>
-            <img
+            <Icon
               class="text-white"
-              src="/twitter.svg"
+              id="Twitter"
               height="20px"
               width="20px"
             />
           </a>
           <a href={socialMediaLinks.youtubeURL}>
-            <img
+            <Icon
               class="text-white"
-              src="/youtube.svg"
+              id="Youtube"
               height="20px"
               width="20px"
             />

@@ -1,4 +1,6 @@
 import type { Product } from "deco-sites/std/commerce/types.ts";
+import { asset, Head } from "$fresh/runtime.ts";
+import Image from "deco-sites/std/components/Image.tsx";
 
 interface Props {
   product: Product | undefined; // Certifique-se de que 'product' possa ser 'undefined'
@@ -33,10 +35,12 @@ function ProductCard({ product }: Props) {
     <div className="w-[297px] shrink-0 rounded-md bg-white select-none">
       <a href={product.isVariantOf?.url}>
         <div className="relative mb-1">
-          <img
+          <Image
             src={images?.[0]?.url || ""}
             alt=""
-            width="100%"
+            loading="lazy"
+            width={297}
+            height={445}
             className="rounded-t-md h-full object-cover" // Use 'className' em vez de 'class'
           />
         </div>

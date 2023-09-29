@@ -34,7 +34,7 @@ export default function Home({
     <section
       style={{
         backgroundImage:
-          "url('/backgroundSphere.png'), url('/backgroundTexture.png'), linear-gradient(to bottom, #5b0d0d, #151111)",
+          "url('/backgroundSphere.svg'), url('/backgroundTexture.png'), linear-gradient(to bottom, #5b0d0d, #151111)",
         backgroundPosition: "center, center",
         backgroundSize: "40vw, cover, 100vw",
       }}

@@ -13,7 +13,7 @@ const Header = ({
     value: "VER OFERTAS",
     responsiveValue: "OFERTAS",
   },
-  picture = "/thealfredlogo.png",
+  picture = "/theAlfred.svg",
 }: Props) => {
   return (
     <header className="bg-transparent z-10 top-0 h-24 w-full flex justify-between items-center px-[8vw]">
