@@ -37,7 +37,8 @@ function ProductCard({ product }: Props) {
         <div className="relative mb-1">
           <Image
             src={images?.[0]?.url || ""}
-            alt=""
+            alt={product.isVariantOf?.name}
+            title={product.isVariantOf?.name}
             loading="lazy"
             width={297}
             height={445}
