@@ -5,8 +5,12 @@ import { useId } from "preact/hooks";
 import type { JSX } from "preact";
 import type { Product } from "deco-sites/std/commerce/types.ts";
 import ProductCard from "./../ProductCard/index.tsx";
+import DiscountCard, { Props as Category } from "../DiscountCard/index.tsx";
 
-type Props = JSX.IntrinsicElements["div"] & { products?: Product[] };
+type Props = JSX.IntrinsicElements["div"] & {
+  products?: Product[];
+  categories?: Category[];
+};
 const Controls = () => {
   return (
     <>
@@ -43,7 +47,7 @@ const Controls = () => {
 };
 
 const Carousel = (
-  { children, class: _class, products }: Props,
+  { class: _class, products, categories }: Props,
 ) => {
   const id = useId();
 
@@ -55,11 +59,17 @@ const Carousel = (
       <Slider
         class={`col-span-full row-span-full scrollbar-none gap-5`}
       >
-        {children !== null && children !== undefined
-          ? children
-          : products?.map((e) => (
+        {products?.length
+          ? products?.map((e) => (
             <ProductCard
               product={e}
+            />
+          ))
+          : categories?.map((e) => (
+            <DiscountCard
+              category={e.category}
+              discount={e.discount}
+              link={e.link}
             />
           ))}
       </Slider>

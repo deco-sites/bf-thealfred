@@ -1,12 +1,8 @@
 import Carousel from "../islands/Carousel/index.tsx";
-import { DiscountCard } from "../components/DiscountCard/index.tsx";
+import DiscountCard, {
+  Props as Category,
+} from "../components/DiscountCard/index.tsx";
 import SectionTitle from "../components/SectionTitle/index.tsx";
-
-type Category = {
-  name: string;
-  discount: number;
-  link: string;
-};
 
 interface Props {
   categories?: Category[];
@@ -14,16 +10,16 @@ interface Props {
 
 export default function DiscountsByCategory({
   categories = [
-    { name: "ELETRODOMÉSTICOS", discount: 30, link: "#" },
-    { name: "ELETRODOMÉSTICOS", discount: 30, link: "#" },
-    { name: "ELETRODOMÉSTICOS", discount: 30, link: "#" },
-    { name: "ELETRODOMÉSTICOS", discount: 30, link: "#" },
-    { name: "ELETRODOMÉSTICOS", discount: 30, link: "#" },
-    { name: "ELETRODOMÉSTICOS", discount: 30, link: "#" },
-    { name: "ELETRODOMÉSTICOS", discount: 30, link: "#" },
-    { name: "ELETRODOMÉSTICOS", discount: 30, link: "#" },
-    { name: "ELETRODOMÉSTICOS", discount: 30, link: "#" },
-    { name: "ELETRODOMÉSTICOS", discount: 30, link: "#" },
+    { category: "ELETRODOMÉSTICOS", discount: 30, link: "#" },
+    { category: "ELETRODOMÉSTICOS", discount: 30, link: "#" },
+    { category: "ELETRODOMÉSTICOS", discount: 30, link: "#" },
+    { category: "ELETRODOMÉSTICOS", discount: 30, link: "#" },
+    { category: "ELETRODOMÉSTICOS", discount: 30, link: "#" },
+    { category: "ELETRODOMÉSTICOS", discount: 30, link: "#" },
+    { category: "ELETRODOMÉSTICOS", discount: 30, link: "#" },
+    { category: "ELETRODOMÉSTICOS", discount: 30, link: "#" },
+    { category: "ELETRODOMÉSTICOS", discount: 30, link: "#" },
+    { category: "ELETRODOMÉSTICOS", discount: 30, link: "#" },
   ],
 }: Props) {
   return (
@@ -40,7 +36,7 @@ export default function DiscountsByCategory({
         {categories.map((category) => {
           return (
             <DiscountCard
-              category={category.name}
+              category={category.category}
               discount={category.discount}
               link={category.link}
             />
@@ -49,17 +45,7 @@ export default function DiscountsByCategory({
       </div>
 
       {/* mobile design */}
-      <Carousel class="grid md:hidden">
-        {categories.map((category) => {
-          return (
-            <DiscountCard
-              category={category.name}
-              discount={category.discount}
-              link={category.link}
-            />
-          );
-        })}
-      </Carousel>
+      <Carousel categories={categories} class="grid md:hidden" />
     </section>
   );
 }

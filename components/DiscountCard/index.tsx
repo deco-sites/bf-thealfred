@@ -1,4 +1,4 @@
-interface Props {
+export interface Props {
   /** @description category name*/
   category: string;
   /** @description percentual discount*/
@@ -7,7 +7,7 @@ interface Props {
   link: string;
 }
 
-export const DiscountCard = ({ category, discount, link }: Props) => {
+const DiscountCard = ({ category, discount, link }: Props) => {
   return (
     <div className="flex flex-col items-center text-sm font-semibold h-48 w-full justify-center p-4 rounded-lg bg-red-900 text-white gap-4 text-center">
       <span>{category}</span>
@@ -27,3 +27,5 @@ export const DiscountCard = ({ category, discount, link }: Props) => {
     </div>
   );
 };
+
+export default DiscountCard;
