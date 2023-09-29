@@ -86,7 +86,14 @@ export default function Footer({
         {thirdParagraph}
       </p>
       <div className="flex flex-col gap-10 items-center md:flex-row md:gap-0 w-full justify-between mt-12">
-        <Image src={picture} width={50} height={18} loading="lazy" />
+        <Image
+          alt="logo"
+          title="logo"
+          src={picture}
+          width={50}
+          height={18}
+          loading="lazy"
+        />
         <p className="text-center text-sm font-ligh0t text-white">
           {footerText}
         </p>
@@ -100,8 +107,8 @@ export default function Footer({
             <Icon
               class="text-white"
               id="Instagram"
-              height="20px"
-              width="20px"
+              height={40}
+              width={40}
             />
           </a>
           <a
@@ -112,8 +119,8 @@ export default function Footer({
             <Icon
               class="text-white"
               id="Facebook"
-              height="20px"
-              width="20px"
+              height={40}
+              width={40}
             />
           </a>
           <a
@@ -124,8 +131,8 @@ export default function Footer({
             <Icon
               class="text-white"
               id="Twitter"
-              height="20px"
-              width="20px"
+              height={40}
+              width={40}
             />
           </a>
           <a
@@ -136,8 +143,8 @@ export default function Footer({
             <Icon
               class="text-white"
               id="Youtube"
-              height="20px"
-              width="20px"
+              height={40}
+              width={40}
             />
           </a>
         </div>
