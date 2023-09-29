@@ -31,4 +31,13 @@ function Slider({
   );
 }
 
+function Item({
+  index,
+  ...props
+}: JSX.IntrinsicElements["li"] & { index: number }) {
+  return <li data-slider-item={index} {...props} />;
+}
+
+Slider.Item = Item;
+
 export default Slider;
