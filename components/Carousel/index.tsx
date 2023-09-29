@@ -49,7 +49,7 @@ const Controls = () => {
 const Carousel = (
   { class: _class, products, categories }: Props,
 ) => {
-  const id = useId();
+  const id = useId() + Date.now();
 
   return (
     <div
