@@ -1,5 +1,4 @@
 import type { Product } from "deco-sites/std/commerce/types.ts";
-import { asset, Head } from "$fresh/runtime.ts";
 import Image from "deco-sites/std/components/Image.tsx";
 
 interface Props {

@@ -1,4 +1,5 @@
 import type { Image as DecoImage } from "deco-sites/std/components/types.ts";
+import Image from "deco-sites/std/components/Image.tsx";
 
 export interface Props {
   buttonValue?: {
@@ -17,7 +18,7 @@ const Header = ({
 }: Props) => {
   return (
     <header className="bg-transparent z-10 top-0 h-24 w-full flex justify-between items-center px-[8vw]">
-      <img src={picture} alt="" width="80px" />
+      <Image src={picture} alt="" width={80} height={30} loading="lazy" />
       <button className="rounded-3xl py-1 px-6 text-white bg-white bg-opacity-50">
         <span className="inline-flex sm:hidden">
           {buttonValue?.responsiveValue?.length

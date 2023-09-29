@@ -1,5 +1,5 @@
 import type { Image as DecoImage } from "deco-sites/std/components/types.ts";
-
+import Image from "deco-sites/std/components/Image.tsx";
 type BenefitItemProps = {
   topMarkedText: string;
   bottomText: string;
@@ -16,9 +16,18 @@ export interface Props {
 const BenefitItem = (
   { topMarkedText, bottomText, bottomMarkedText, picture }: BenefitItemProps,
 ) => {
+  const altAndTitleValue = topMarkedText + " " + bottomText + " " +
+    bottomMarkedText;
   return (
     <div className="flex-col md:flex-row flex items-center gap-3">
-      <img src={picture} loading="lazy" height={20} />
+      <Image
+        src={picture!}
+        loading="lazy"
+        height={20}
+        width={18}
+        alt={altAndTitleValue}
+        title={altAndTitleValue}
+      />
       <p className="text-center max-[768px]:text-[10px] md:text-left font-bold text-md text-white">
         {topMarkedText}
         <br />

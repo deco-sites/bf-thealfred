@@ -1,5 +1,6 @@
 import Icon from "../components/ui/Icon.tsx";
 import type { Image as DecoImage } from "deco-sites/std/components/types.ts";
+import Image from "deco-sites/std/components/Image.tsx";
 
 interface Props {
   title?: {
@@ -85,13 +86,17 @@ export default function Footer({
         {thirdParagraph}
       </p>
       <div className="flex flex-col gap-10 items-center md:flex-row md:gap-0 w-full justify-between mt-12">
-        <img src={picture} width="50px" />
+        <Image src={picture} width={50} height={18} loading="lazy" />
         <p className="text-center text-sm font-ligh0t text-white">
           {footerText}
         </p>
 
         <div className="flex gap-2 items-center">
-          <a href={socialMediaLinks.instagramURL}>
+          <a
+            title="Instagram"
+            aria-label="Clique aqui para ir ao Instagram"
+            href={socialMediaLinks.instagramURL}
+          >
             <Icon
               class="text-white"
               id="Instagram"
@@ -99,7 +104,11 @@ export default function Footer({
               width="20px"
             />
           </a>
-          <a href={socialMediaLinks.facebookURL}>
+          <a
+            title="Facebook"
+            aria-label="Clique aqui para ir ao Facebook"
+            href={socialMediaLinks.facebookURL}
+          >
             <Icon
               class="text-white"
               id="Facebook"
@@ -107,7 +116,11 @@ export default function Footer({
               width="20px"
             />
           </a>
-          <a href={socialMediaLinks.twitterURL}>
+          <a
+            title="Twitter"
+            aria-label="Clique aqui para ir ao Twitter"
+            href={socialMediaLinks.twitterURL}
+          >
             <Icon
               class="text-white"
               id="Twitter"
@@ -115,7 +128,11 @@ export default function Footer({
               width="20px"
             />
           </a>
-          <a href={socialMediaLinks.youtubeURL}>
+          <a
+            title="Youtube"
+            aria-label="Clique aqui para ir ao Youtube"
+            href={socialMediaLinks.youtubeURL}
+          >
             <Icon
               class="text-white"
               id="Youtube"
