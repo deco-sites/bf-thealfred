@@ -81,6 +81,13 @@ const setup = ({ rootId, behavior, interval }: Props) => {
     });
   };
 
+  const mobileScreen = 760;
+  if (root.clientWidth < mobileScreen) {
+    goToItem(1);
+  } else {
+    goToItem(0);
+  }
+
   const onClickPrev = () => {
     const [item] = items;
     const sliderWidth = slider.clientWidth;
