@@ -52,7 +52,7 @@ const setup = ({ rootId, behavior, interval }: Props) => {
   const prev = root?.querySelector(`[${ATTRIBUTES['data-slide="prev"']}]`);
   const next = root?.querySelector(`[${ATTRIBUTES['data-slide="next"']}]`);
   const dots = root?.querySelectorAll(`[${ATTRIBUTES["data-dot"]}]`);
-  let itemToScroll = 0;
+  let itemToGap = 0;
 
   if (!root || !slider || !items || items.length === 0) {
     console.warn(
@@ -82,31 +82,61 @@ const setup = ({ rootId, behavior, interval }: Props) => {
   };
 
   const onClickPrev = () => {
-    if (itemToScroll === 0) {
-      itemToScroll = items.length;
+    const [item] = items;
+    const sliderWidth = slider.clientWidth;
+    const itemWidth = item.clientWidth;
+
+    const sliderWidthWithoutRest = sliderWidth - (sliderWidth % itemWidth);
+
+    const quantityOfVisibleCards = sliderWidthWithoutRest / itemWidth;
+
+    if (itemToGap === 0) {
+      itemToGap = items.length;
       onClickPrev();
       return;
     }
-    items[itemToScroll - 1].scrollIntoView({
+
+    items[
+      (quantityOfVisibleCards + itemToGap) - (quantityOfVisibleCards + 1)
+    ].scrollIntoView({
       block: "nearest",
       behavior: "smooth",
     });
 
-    itemToScroll--;
+    if (itemToGap === items.length) {
+      itemToGap -= quantityOfVisibleCards;
+      return;
+    }
+
+    itemToGap--;
   };
+
   const onClickNext = () => {
     const [item] = items;
+    const sliderWidth = slider.clientWidth;
+    const itemWidth = item.clientWidth;
 
-    if (itemToScroll === items.length - 1) {
-      itemToScroll = -1;
+    const sliderWidthWithoutRest = sliderWidth - (sliderWidth % itemWidth);
+
+    const quantityOfVisibleCards = sliderWidthWithoutRest / itemWidth;
+
+    if (quantityOfVisibleCards + itemToGap === items.length) {
+      itemToGap = -quantityOfVisibleCards;
       onClickNext();
       return;
     }
-    items[itemToScroll + 1].scrollIntoView({
+
+    items[quantityOfVisibleCards + itemToGap].scrollIntoView({
       block: "nearest",
       behavior: "smooth",
     });
-    itemToScroll++;
+
+    if (itemToGap < 0) {
+      itemToGap = 0;
+      return;
+    }
+
+    itemToGap++;
   };
 
   const observer = new IntersectionObserver(

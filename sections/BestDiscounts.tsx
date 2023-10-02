@@ -12,7 +12,7 @@ export default function BestDiscounts({ products }: Props) {
   }
 
   return (
-    <section className="bg-[#171111] flex w-full flex-col pt-10 px-[8vw] max-[768px]:pr-0">
+    <section className="bg-[#171111] flex w-full items-center sm:items-start flex-col pt-10 sm:px-[8vw] max-[768px]:pr-0">
       <SectionTitle symbol="$" text="MAIORES" markedText="DESCONTOS" />
       <Carousel products={products} />
     </section>

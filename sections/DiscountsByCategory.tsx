@@ -23,13 +23,15 @@ export default function DiscountsByCategory({
   ],
 }: Props) {
   return (
-    <section className="bg-[#171111] px-[6vw] py-[8vw] sm:p-[8vw]">
-      <SectionTitle
-        invertMarkedText
-        symbol="%"
-        text="POR CATEGORIA"
-        markedText="DESCONTOS"
-      />
+    <section className="bg-[#171111] py-[8vw] sm:p-[8vw]">
+      <div className="w-full flex justify-center sm:justify-start">
+        <SectionTitle
+          invertMarkedText
+          symbol="%"
+          text="POR CATEGORIA"
+          markedText="DESCONTOS"
+        />
+      </div>
 
       {/* desktop design */}
       <div className="hidden md:grid overflow-hidden md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
