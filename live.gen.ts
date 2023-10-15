@@ -8,11 +8,11 @@ import * as $$$$$0 from "./islands/Carousel/index.tsx";
 import * as $$$$$1 from "./islands/ShowCaseCarousel/index.tsx";
 import * as $$$$$2 from "./islands/SliderJS/index.tsx";
 import * as $$$$$$$$0 from "./sections/BestDiscounts.tsx";
-import * as $$$$$$$$1 from "./sections/DiscountsByCategory.tsx";
-import * as $$$$$$$$2 from "./sections/Footer.tsx";
-import * as $$$$$$$$3 from "./sections/Home.tsx";
-import * as $$$$$$$$4 from "./sections/SaleOff.tsx";
-import * as $$$$$$$$5 from "./sections/Theme.tsx";
+import * as $$$$$$$$1 from "./sections/Home.tsx";
+import * as $$$$$$$$2 from "./sections/DiscountsByCategory.tsx";
+import * as $$$$$$$$3 from "./sections/Theme.tsx";
+import * as $$$$$$$$4 from "./sections/Footer.tsx";
+import * as $$$$$$$$5 from "./sections/SaleOff.tsx";
 import * as $live_workflows from "$live/routes/live/workflows/run.ts";
 import * as $live_middleware from "$live/routes/_middleware.ts";
 import * as $live_workbench from "$live/routes/live/workbench.ts";
@@ -172,11 +172,11 @@ const manifest = {
     "$live/sections/Slot.tsx": i2$$$$$3,
     "$live/sections/UseSlot.tsx": i2$$$$$4,
     "deco-sites/bf-thealfred/sections/BestDiscounts.tsx": $$$$$$$$0,
-    "deco-sites/bf-thealfred/sections/DiscountsByCategory.tsx": $$$$$$$$1,
-    "deco-sites/bf-thealfred/sections/Footer.tsx": $$$$$$$$2,
-    "deco-sites/bf-thealfred/sections/Home.tsx": $$$$$$$$3,
-    "deco-sites/bf-thealfred/sections/SaleOff.tsx": $$$$$$$$4,
-    "deco-sites/bf-thealfred/sections/Theme.tsx": $$$$$$$$5,
+    "deco-sites/bf-thealfred/sections/DiscountsByCategory.tsx": $$$$$$$$2,
+    "deco-sites/bf-thealfred/sections/Footer.tsx": $$$$$$$$4,
+    "deco-sites/bf-thealfred/sections/Home.tsx": $$$$$$$$1,
+    "deco-sites/bf-thealfred/sections/SaleOff.tsx": $$$$$$$$5,
+    "deco-sites/bf-thealfred/sections/Theme.tsx": $$$$$$$$3,
     "deco-sites/std/sections/Analytics.tsx": i2$$$$$5,
     "deco-sites/std/sections/configButterCMS.global.tsx": i2$$$$$6,
     "deco-sites/std/sections/configNuvemShop.tsx": i2$$$$$7,
