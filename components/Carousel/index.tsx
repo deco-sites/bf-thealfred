@@ -3,7 +3,7 @@ import Slider from "../ui/Slider/index.tsx";
 import Icon from "../ui/Icon.tsx";
 import { useId } from "preact/hooks";
 import type { JSX } from "preact";
-import type { Product } from "deco-sites/std/commerce/types.ts";
+import type { Product } from "apps/commerce/types.ts";
 import ProductCard from "./../ProductCard/index.tsx";
 import DiscountCard, { Props as Category } from "../DiscountCard/index.tsx";
 

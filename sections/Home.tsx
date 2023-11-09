@@ -9,7 +9,7 @@ import BenefitBar, {
   Props as BenefitBarProps,
 } from "../components/Home/BenefitBar.tsx";
 import Header, { Props as HeaderProps } from "../components/Header/index.tsx";
-import type { Product } from "deco-sites/std/commerce/types.ts";
+import type { Product } from "apps/commerce/types.ts";
 
 interface Props {
   products: Product[] | null;

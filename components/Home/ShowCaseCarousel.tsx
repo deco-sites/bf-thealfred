@@ -1,5 +1,5 @@
 import Carousel from "../../islands/Carousel/index.tsx";
-import type { Product } from "deco-sites/std/commerce/types.ts";
+import type { Product } from "apps/commerce/types.ts";
 export interface Props {
   products: Product[];
   startMarkedText?: string;

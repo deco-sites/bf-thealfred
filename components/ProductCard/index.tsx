@@ -1,5 +1,5 @@
-import type { Product } from "deco-sites/std/commerce/types.ts";
-import Image from "deco-sites/std/components/Image.tsx";
+import type { Product } from "apps/commerce/types.ts";
+import Image from "apps/website/components/Image.tsx";
 
 interface Props {
   product: Product | undefined; // Certifique-se de que 'product' possa ser 'undefined'

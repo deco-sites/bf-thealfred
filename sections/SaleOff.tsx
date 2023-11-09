@@ -1,7 +1,7 @@
 import Carousel from "deco-sites/start/islands/Carousel/index.tsx";
 import ProductCard from "../components/ProductCard/index.tsx";
 import SectionTitle from "../components/SectionTitle/index.tsx";
-import type { Product } from "deco-sites/std/commerce/types.ts";
+import type { Product } from "apps/commerce/types.ts";
 
 interface Props {
   products: Product[] | null;

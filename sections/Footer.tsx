@@ -1,6 +1,6 @@
 import Icon from "../components/ui/Icon.tsx";
 import type { Image as DecoImage } from "deco-sites/std/components/types.ts";
-import Image from "deco-sites/std/components/Image.tsx";
+import Image from "apps/website/components/Image.tsx";
 
 interface Props {
   title?: {
